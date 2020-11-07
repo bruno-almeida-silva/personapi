@@ -13,8 +13,8 @@ public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
     @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
-    Person PersonDTOtoPerson(PersonDTO personDTO);
+    Person toModel(PersonDTO personDTO);
 
     @InheritInverseConfiguration
-    PersonDTO personToPersonDTO(Person person);
+    PersonDTO toDTO(Person person);
 }
